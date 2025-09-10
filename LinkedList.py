@@ -33,7 +33,7 @@ class LinkedList:
         seqFrutas = ""
         aux = self.head
         while aux is not None:
-            seqFrutas += f"{aux.data} - "
+            seqFrutas += f"{aux.data} -> "
             aux = aux.next
         return seqFrutas
    
@@ -54,22 +54,36 @@ class LinkedList:
             var_busca = var_busca.next
         return False        
 
+    def remove_ini(self):
+        aux = self.head
+        self.head = aux.next
+        aux = None
+        return
 
-    # fazer uma função que busca um item em uma lista encadeada
-    # fazer uma função que remove no começo e no final 
-    # fazer uma função que remove um valor que o usuario passar 
-    #        
+    def remove_fim(self):
+        if self.head is None:
+            print("Lista vazia!")
+            return
 
+        if self.head.next is None:  # só 1 elemento
+            self.head = None
+            return
 
+        atual = self.head
+        while atual.next.next is not None:  # vai até o penúltimo
+            atual = atual.next
 
+        atual.next = None  # remove o último
+      
+    def remove_item(self,item):
+        busca = self.head
+        while busca.next is not None:
+            if busca.next.data == item:   # achou no próximo nó
+                busca.next = busca.next.next  # remove a ligação
+                return
+            busca = busca.next
 
-
-
-
-
-
-
-
+        return "O elemento não existe na lista"
 
 
 
@@ -88,5 +102,12 @@ l.add("bola de golfe")
 print(l.mostrar())
 print(l.size())
 print(l.search("abacate"))
-
-
+print("")
+#l.remove_ini()
+print(l.mostrar())
+#l.remove_fim()
+print(l.mostrar())
+l.add("uva")
+l.add("abobora")
+l.remove_item("papaya")
+print(l.mostrar())
