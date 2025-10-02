@@ -40,3 +40,14 @@ O programa realiza a leitura dos arquivos, aplica os algoritmos de ordenação e
 ```bash
 g++ -o ordenacao main.cpp
 
+./ordenacao nomes_100k.txt
+./ordenacao nomes_250k.txt
+./ordenacao nomes_500k.txt
+
+```
+## 👨‍💻 Colaboradores
+- [@Gustasssdev](https://github.com/SeuUsuario)  
+- [@DiogoRangel11](https://github.com/DiogoRangel11)  
+- [@Cieliocas](https://github.com/Cieliocas)  
+
+
